@@ -2,6 +2,7 @@ import cors from 'cors';
 import express, { Express } from 'express';
 import helmet from 'helmet';
 import { pino } from 'pino';
+import { DataSourceOptions } from 'typeorm';
 
 import errorHandler from '@/common/middleware/error.handler';
 import rateLimiter from '@/common/middleware/rate.limiter';
@@ -9,7 +10,19 @@ import requestLogger from '@/common/middleware/request.logger';
 import { env } from '@/common/utils/env.config';
 import { healthCheckRouter } from '@/healthCheck/health.check.router';
 
+import DatabaseManager from './datasource';
 import { postsRouter } from './posts/posts.router';
+
+const datasourceOptions: DataSourceOptions = {
+  type: 'sqlite',
+  database: './src/database/database.sqlite',
+  synchronize: true,
+  logging: true,
+};
+
+// Initialize databaseManager object and initialize data source
+const dbManager: DatabaseManager = new DatabaseManager(datasourceOptions);
+dbManager.initializeDataSource();
 
 const logger = pino({ name: 'server start' });
 const app: Express = express();
@@ -29,4 +42,4 @@ app.use('/posts', postsRouter);
 // Error handlers
 app.use(errorHandler());
 
-export { app, logger };
+export { app, dbManager, logger };

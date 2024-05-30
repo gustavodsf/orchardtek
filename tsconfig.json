@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    "importsNotUsedAsValues": "remove",
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "skipLibCheck": true,
     "ignoreDeprecations": "5.0",
+    "importsNotUsedAsValues": "remove",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noPropertyAccessFromIndexSignature": false,
+    "outDir": "dist",
+    "paths": {"@/*": ["src/*"]},
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "target": "ESNext",
     "types": ["vitest/globals"]
   },
   "extends": [],
