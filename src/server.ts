@@ -33,7 +33,7 @@ dbManager
 
 const logger = pino({ name: 'server start' });
 const app: Express = express();
-
+app.use(express.json());
 // Middlewares
 app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
 app.use(helmet());
