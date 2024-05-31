@@ -2,7 +2,8 @@ import { dbManager } from '@/server';
 
 import { Post } from './posts.model';
 
-export const findAll = () => {
+export const findAll = async () => {
   const postRepository = dbManager.getDataSource().getRepository(Post);
-  return postRepository.find();
+  const allPosts = await postRepository.find();
+  return allPosts;
 };

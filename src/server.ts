@@ -22,7 +22,14 @@ const datasourceOptions: DataSourceOptions = {
 
 // Initialize databaseManager object and initialize data source
 const dbManager: DatabaseManager = new DatabaseManager(datasourceOptions);
-dbManager.initializeDataSource();
+dbManager
+  .initializeDataSource()
+  .then(() => {
+    logger.info('Datasource initialized!');
+  })
+  .catch(() => {
+    logger.error('Problem to start our datasource!');
+  });
 
 const logger = pino({ name: 'server start' });
 const app: Express = express();

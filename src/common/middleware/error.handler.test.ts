@@ -11,7 +11,7 @@ describe('Check error handler for not found endpoint', () => {
 
     expect(response.statusCode).toEqual(StatusCodes.NOT_FOUND);
     expect(result.status).toEqual('failed');
-    expect(result.responseObject).toBeNull();
+    expect(result.data).toBeNull();
     expect(result.message).toEqual('Not Found');
   });
 });

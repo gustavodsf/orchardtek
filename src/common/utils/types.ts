@@ -8,13 +8,13 @@ export enum ResponseStatus {
 export class ServiceResponse<T = null> {
   status: string;
   message: string;
-  responseObject: T;
+  data: T;
   statusCode: number;
 
-  constructor(status: ResponseStatus, message: string, responseObject: T, statusCode: number) {
+  constructor(status: ResponseStatus, message: string, data: T, statusCode: number) {
     this.status = status.toString();
     this.message = message;
-    this.responseObject = responseObject;
+    this.data = data;
     this.statusCode = statusCode;
   }
 }
