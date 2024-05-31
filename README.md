@@ -1,4 +1,4 @@
-### orchardtek
+### Orchardtek
 
 This application was created using Express.js, Supertest and TypeORM:
 
