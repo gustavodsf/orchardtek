@@ -19,7 +19,7 @@ This application was created using Express.js, Supertest and TypeORM:
 `npm run test`
 
 > [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+> The test has some race condition problems. It is working, but I think that at some point, part of the code is trying to change the database when it is already closed or is trying to run the test before the connection is established.
 
 #### Folder structure
 ```
