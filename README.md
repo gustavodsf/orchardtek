@@ -67,3 +67,6 @@ Directions: Please implement a RESTful API endpoint using TypeScript and Node.js
 - Follow a strict TDD approach, writing tests before implementing the corresponding functionality [X]
 - BONUS POINTS: implement auth. [ ]
 ```
+
+
+[Ioom Video](https://www.loom.com/share/b349c7a894064fc7b2563436ff0f1934?sid=67e2af5a-251c-4642-8920-ffe41884280a)
